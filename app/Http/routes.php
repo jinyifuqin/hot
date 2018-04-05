@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'HotController@index');
+
+Route::group(array('prefix' => 'admin'), function() {
+    Route::get('user','Admin\UserController@index');
+});
