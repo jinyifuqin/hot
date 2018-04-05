@@ -36,6 +36,7 @@ class UsersController extends Controller
     {   //
 //        $id = DB::table('users')->insertGetId(
 //            ['email' => 'john@example.com', 'votes' => 0]);
+//        echo "<pre>";var_dump($req);exit;
         $obj = new Newuser();
         $obj->username = $req['username'];
         $obj->email = $req['email'];

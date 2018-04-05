@@ -16,4 +16,5 @@ Route::get('/', 'HotController@index');
 Route::group(array('prefix' => 'admin'), function() {
     Route::get('user','Admin\UsersController@index');
     Route::get('register','Admin\UsersController@register');
+    Route::post('save','Admin\UsersController@save');
 });
