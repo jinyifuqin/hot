@@ -77,7 +77,7 @@ class UsersController extends Controller
             $psw = $req['psw'];
             $obj = new Newuser();
             $re = $obj->where(['username'=>$username,'password'=>$psw])->first();
-            Cache::put('user',$re,10);
+            Cache::put('user',$re,100);
         }
         $memRe = Cache::get('user');
 
@@ -88,6 +88,46 @@ class UsersController extends Controller
         }else{
             return redirect('/admin/user');
         }
+    }
+
+    public function editshow(){
+        return view('admin.editshow');
+    }
+
+    public function picsave(Request $request){
+        $obj = new Pic();
+        $obj->title = $request->title;
+        $obj->content = $_POST['content'];
+
+        $res = Pic::where('title',$obj->title)->get();
+        if(count($res))
+            return redirect('admin/pic');
+
+        $str = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        $newStr = '';
+        for($i=0;$i<14;$i++){
+            $num = mt_rand(0,strlen($str)-1);
+            $newStr .= substr($str,$num,1);
+        }
+        $newStr = $newStr.'.jpg';
+        if($request->file('picname'))
+            $request->file('picname')->move(public_path('uploads'),$newStr);
+        $obj->pathname = $newStr;
+        $re = $obj->save();
+        $memRe = Cache::get('user');
+        if($re){
+            $data = Pic::paginate(5);
+            $data->setPath('pic');
+            return view('admin.pic',['data'=>$data,'re'=>$memRe]);
+        }
+    }
+
+    public function piclist()
+    {
+        $memRe = Cache::get('user');
+//        dd($memRe);exit;
+        $data = DB::table('pics')->paginate(5);
+        return view("admin.pic",['data'=>$data,'re'=>$memRe]);
     }
 
 }

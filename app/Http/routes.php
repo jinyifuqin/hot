@@ -18,5 +18,7 @@ Route::group(array('prefix' => 'admin'), function() {
     Route::get('register','Admin\UsersController@register');
     Route::post('save','Admin\UsersController@save');
     Route::match(['get', 'post'],'login','Admin\UsersController@login');
-    Route::get('pic','Admin\UserController@piclist');
+    Route::get('pic','Admin\UsersController@piclist');
+    Route::get('editshow','Admin\UsersController@editshow');
+    Route::post('picsave','Admin\UsersController@picsave');
 });
