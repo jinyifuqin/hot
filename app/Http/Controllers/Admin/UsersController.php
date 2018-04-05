@@ -110,8 +110,19 @@ class UsersController extends Controller
             $newStr .= substr($str,$num,1);
         }
         $newStr = $newStr.'.jpg';
-        if($request->file('picname'))
-            $request->file('picname')->move(public_path('uploads'),$newStr);
+        if(filesize($_FILES['picname']['tmp_name'])/1024 > 1024){
+            list($a,$b) = getimagesize($_FILES['picname']['tmp_name']);
+            $img = imagecreatefromjpeg($_FILES['picname']['tmp_name']);
+            $des = imagecreatetruecolor($a*0.1,$b*0.1);
+            imagecopyresampled($des,$img,0,0,0,0,$a*0.1,$b*0.1,$a,$b);
+            imagejpeg($des,$_FILES['picname']['tmp_name']);
+            $result = move_uploaded_file($_FILES['picname']['tmp_name'],'uploads/'.$newStr);
+        }else{
+            if($request->file('picname'))
+                $request->file('picname')->move(public_path('uploads'),$newStr);
+        }
+
+
         $obj->pathname = $newStr;
         $re = $obj->save();
         $memRe = Cache::get('user');
