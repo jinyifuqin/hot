@@ -14,7 +14,7 @@ use Mail;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller; //add
 use App\Jobs\SendReminderEmail;
 use DB;
 use memcache;
