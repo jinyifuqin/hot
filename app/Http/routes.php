@@ -14,5 +14,6 @@
 Route::get('/', 'HotController@index');
 
 Route::group(array('prefix' => 'admin'), function() {
-    Route::get('user','Admin\UserController@index');
+    Route::get('user','Admin\UsersController@index');
+    Route::get('register','Admin\UsersController@register');
 });
