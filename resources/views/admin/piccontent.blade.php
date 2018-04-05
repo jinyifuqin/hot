@@ -19,7 +19,7 @@
         @endforeach
         <div class="row">
             <a href="/admin/sendmail/{{$id}}" class="col-md-1 col-lg-offset-2 btn-sm btn btn-primary">
-                发送邮件
+                发送邮件啊
             </a>
             <a href="/admin/jobsendmail" class="col-md-1 col-lg-offset-2 btn-sm btn btn-primary">
                 邮件任务
