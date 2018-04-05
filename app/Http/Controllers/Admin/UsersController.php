@@ -144,4 +144,18 @@ class UsersController extends Controller
         return view('admin/piccontent',['res'=>$res]);
     }
 
+    public function sendmail(){
+        $name = '灰果果';
+        $flag = Mail::send('emails.reminder',['name'=>$name],function($message){
+            $to = '263711365@qq.com';
+            $message ->to($to)->subject('测试邮件');
+        });
+        if($flag){
+            echo '发送邮件成功，请查收！';
+        }else{
+            echo '发送邮件失败，请重试！';
+        }
+//        var_dump($num);
+    }
+
 }
