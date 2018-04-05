@@ -1,5 +1,13 @@
 @extends('layout')
 @section('content')
+    <style>
+        body{
+            background-image: url("{{ URL::asset('Bjphoto.jpg') }}");
+            background-repeat:no-repeat ;
+            background-size:100% 100%;
+            background-attachment: fixed;"
+        }
+    </style>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
