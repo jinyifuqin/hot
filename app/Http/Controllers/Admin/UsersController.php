@@ -21,7 +21,7 @@ use memcache;
 use Cache;
 
 
-class UserController extends Controller
+class UsersController extends Controller
 {
   public function index()
     {
