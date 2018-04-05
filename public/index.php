@@ -20,7 +20,7 @@
 */
 
 require __DIR__.'/../bootstrap/autoload.php';
-
+//echo 44;exit;
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
