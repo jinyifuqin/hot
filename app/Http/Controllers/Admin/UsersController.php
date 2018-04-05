@@ -68,4 +68,26 @@ class UsersController extends Controller
         }
     }
 
+    public function login(Request $req,$page=1){
+//        echo "<pre>";var_dump($page);exit;
+        if (Cache::get('user')){
+
+        }else{
+            $username = $req['username'];
+            $psw = $req['psw'];
+            $obj = new Newuser();
+            $re = $obj->where(['username'=>$username,'password'=>$psw])->first();
+            Cache::put('user',$re,10);
+        }
+        $memRe = Cache::get('user');
+
+        if($memRe || count($re)){
+            $data = DB::table('pics')->paginate(5);
+
+            return view('/admin/pic',['data'=>$data,'re'=>$memRe]);
+        }else{
+            return redirect('/admin/user');
+        }
+    }
+
 }
