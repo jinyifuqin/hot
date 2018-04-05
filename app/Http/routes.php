@@ -21,4 +21,6 @@ Route::group(array('prefix' => 'admin'), function() {
     Route::get('pic','Admin\UsersController@piclist');
     Route::get('editshow','Admin\UsersController@editshow');
     Route::post('picsave','Admin\UsersController@picsave');
+    Route::get('picdelete/{id}','Admin\UsersController@picdelete');
+    Route::get('piccontent/{id}','Admin\UsersController@piccontent');
 });

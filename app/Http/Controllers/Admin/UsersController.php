@@ -125,9 +125,23 @@ class UsersController extends Controller
     public function piclist()
     {
         $memRe = Cache::get('user');
-//        dd($memRe);exit;
         $data = DB::table('pics')->paginate(5);
+//        echo "<pre>";var_dump($data);exit;
         return view("admin.pic",['data'=>$data,'re'=>$memRe]);
+    }
+
+    public function picdelete($id)
+    {
+        $obj = Pic::find($id);
+        $re = $obj->delete();
+        if($re){
+            return redirect('admin/pic');
+        }
+    }
+
+    public function piccontent($id){
+        $res = Pic::where('id',$id)->get();
+        return view('admin/piccontent',['res'=>$res]);
     }
 
 }
