@@ -115,7 +115,7 @@ class UsersController extends Controller
         $obj->pathname = $newStr;
         $re = $obj->save();
         $memRe = Cache::get('user');
-        if($re){
+        if($re){//
             $data = Pic::paginate(5);
             $data->setPath('pic');
             return view('admin.pic',['data'=>$data,'re'=>$memRe]);
