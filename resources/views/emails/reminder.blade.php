@@ -1,45 +1,45 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Email</div>
+@extends('layout')
+@section('content')
+    <div class="container">
+        @foreach($res as $value)
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="text-align: center">{{$value->title}}</h3>
+                </div>
             </div>
-        </div>
-    </body>
-</html>
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="{{ URL::asset('APIyyh/safepic.php') }}">
+                    {{--<img style="width: 100%;" class="img-thumbnail" src="/uploads/{{$value->pathname}}"/>--}}
+                    <img style="width: 100%;" class="img-thumbnail" src='{{ URL::asset("/uploads/$value->pathname") }}'/>
+
+                </div>
+                <div class="col-sm-9 well well-lg" style="background-color: #dedef8;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;min-height: 23em;">
+                    {{$value->content}}
+                </div>
+            </div>
+        @endforeach
+        {{--<div class="row">--}}
+            {{--<a href="/admin/sendmail/{{$id}}" class="col-md-1 col-lg-offset-2 btn-sm btn btn-primary">--}}
+                {{--发送邮件--}}
+            {{--</a>--}}
+            {{--<a href="/admin/jobsendmail" class="col-md-1 col-lg-offset-2 btn-sm btn btn-primary">--}}
+                {{--邮件任务--}}
+            {{--</a>--}}
+        {{--</div>--}}
+        {{--<div class="row">--}}
+        {{--<div class="center-block" style="width:30%;">--}}
+        {{--<ul class="pagination">--}}
+        {{--<li><a href="#">&laquo;</a></li>--}}
+        {{--<li><a href="#">1</a></li>--}}
+        {{--<li><a href="#">2</a></li>--}}
+        {{--<li><a href="#">3</a></li>--}}
+        {{--<li><a href="#">4</a></li>--}}
+        {{--<li><a href="#">5</a></li>--}}
+        {{--<li><a href="#">&raquo;</a></li>--}}
+        {{--</ul>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+    </div>
+
+@stop

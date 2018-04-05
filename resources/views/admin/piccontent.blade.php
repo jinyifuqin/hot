@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-3">
                 <img src="{{ URL::asset('APIyyh/safepic.php') }}">
-                <img style="width: 100%;" class="img-thumbnail" src="/uploads/{{$value->pathname}}"/>
+                <img style="width: 100%;" class="img-thumbnail" src='{{ URL::asset("/uploads/$value->pathname") }}'/>
             </div>
             <div class="col-md-9 well well-lg" style="background-color: #dedef8;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;min-height: 23em;">
             {{$value->content}}
@@ -18,7 +18,7 @@
         </div>
         @endforeach
         <div class="row">
-            <a href="/admin/sendmail" class="col-md-1 col-lg-offset-2 btn-sm btn btn-primary">
+            <a href="/admin/sendmail/{{$id}}" class="col-md-1 col-lg-offset-2 btn-sm btn btn-primary">
                 发送邮件
             </a>
             <a href="/admin/jobsendmail" class="col-md-1 col-lg-offset-2 btn-sm btn btn-primary">

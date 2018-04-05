@@ -141,12 +141,13 @@ class UsersController extends Controller
 
     public function piccontent($id){
         $res = Pic::where('id',$id)->get();
-        return view('admin/piccontent',['res'=>$res]);
+        return view('admin/piccontent',['res'=>$res,'id'=>$id]);
     }
 
-    public function sendmail(){
-        $name = '灰果果';
-        $flag = Mail::send('emails.reminder',['name'=>$name],function($message){
+    public function sendmail($id){
+        $res = Pic::where('id',$id)->get();
+//        echo "<pre>";var_dump($res);exit;
+        $flag = Mail::send('emails.reminder',['res'=>$res],function($message){
             $to = '263711365@qq.com';
             $message ->to($to)->subject('测试邮件');
         });
