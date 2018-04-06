@@ -8,8 +8,8 @@
 
 namespace App\Http\Controllers;
 define("TOKEN", "weixin");//自己定义的token 就是个通信的私钥
-$wechatObj = new WeixinController();
-$wechatObj->valid();
+//$wechatObj = new WeixinController();
+//$wechatObj->valid();
 class WeixinController
 {
     public function valid()
