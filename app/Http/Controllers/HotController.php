@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use URL;
 require __DIR__.'/../../libweibo-master/saetv2.ex.class.php';
 require __DIR__.'/../../libweibo-master/config.php';
+const TOKEN = 'hello';
 class HotController extends Controller{
     public function index(){
         $callback_url = "http://jinyifuqin.vip/admin/user";
@@ -50,18 +51,15 @@ class HotController extends Controller{
     }
 
     public function wx(){
-
-
         $signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
         $nonce = $_GET["nonce"];
-
-        $tmpArr = array($timestamp, $nonce);
-        sort($tmpArr, SORT_STRING);
+        $token = TOKEN;
+        $tmpArr = array($token, $timestamp, $nonce);
+        sort($tmpArr);
         $tmpStr = implode( $tmpArr );
         $tmpStr = sha1( $tmpStr );
-
-        if( $signature ){
+        if( $tmpStr == $signature ){
             return true;
         }else{
             return false;
