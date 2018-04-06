@@ -5,7 +5,7 @@ use Illuminate\Routing\Controller;
 
 header('content-type:text/html;charset=utf-8');
 
-define("TOKEN", "yangyh"); //define your token
+define("TOKEN", "hello"); //define your token
 $wx = new WxController();
 
 if($_GET['echostr']){
