@@ -20,10 +20,10 @@ use DB;
 use memcache;
 use Cache;
 
-
 class UsersController extends Controller
 {
     public function index(){
+
         return view('admin.index');
         //
     }

@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'HotController@index');
+Route::get('login', 'HotController@login');
+Route::get('weibolist', 'HotController@weibolist');
 
 Route::group(array('prefix' => 'admin'), function() {
     Route::get('user','Admin\UsersController@index');
