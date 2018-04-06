@@ -4,7 +4,6 @@
     <list default="true" id="d0790035-a62e-460f-8a6a-104115f892b6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HotController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HotController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="hot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +28,11 @@
       <file leaf-file-name="HotController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HotController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-201">
-              <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+            <state relative-caret-position="279">
+              <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
               <folding>
-                <marker date="1523003672589" expanded="true" signature="230:254" placeholder="..." />
-                <marker date="1523003672589" expanded="true" signature="291:363" placeholder="..." />
+                <marker date="1523004901129" expanded="true" signature="230:254" placeholder="..." />
+                <marker date="1523004901129" expanded="true" signature="291:363" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -303,7 +302,7 @@
       <updated>1522761489040</updated>
       <workItem from="1522761490879" duration="17492000" />
       <workItem from="1522928353378" duration="3279000" />
-      <workItem from="1522976879698" duration="18029000" />
+      <workItem from="1522976879698" duration="18744000" />
     </task>
     <task id="LOCAL-00001" summary="add usercheck">
       <created>1522893140101</created>
@@ -459,11 +458,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523000204492</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="weibo">
+      <created>1523004269913</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1523004269913</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38800000" />
+    <option name="totallyTimeSpent" value="39515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -871,11 +877,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HotController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-201">
-          <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+        <state relative-caret-position="279">
+          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
           <folding>
-            <marker date="1523003672589" expanded="true" signature="230:254" placeholder="..." />
-            <marker date="1523003672589" expanded="true" signature="291:363" placeholder="..." />
+            <marker date="1523004901129" expanded="true" signature="230:254" placeholder="..." />
+            <marker date="1523004901129" expanded="true" signature="291:363" placeholder="..." />
           </folding>
         </state>
       </provider>

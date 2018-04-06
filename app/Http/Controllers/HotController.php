@@ -52,25 +52,20 @@ class HotController extends Controller{
     public function wx(){
 
 
-        $appId = 'wx8e4f59fdf635407f';
-        $appSecret = 'fe224c15419d6f46bf8b802aa6b93b5d';
-        $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appId."&secret=".$appSecret;
-//初始化curl
-        $ch = curl_init($url);
-//3.设置参数
-        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+        $signature = $_GET["signature"];
+        $timestamp = $_GET["timestamp"];
+        $nonce = $_GET["nonce"];
 
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);//跳过证书验证
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);  // 从证书中检查SSL加密算法是否存在
-//4.调用接口
-        $res = curl_exec($ch);
-        if(curl_errno($ch)){
-            var_dump(curl_error($ch));
+        $tmpArr = array($timestamp, $nonce);
+        sort($tmpArr, SORT_STRING);
+        $tmpStr = implode( $tmpArr );
+        $tmpStr = sha1( $tmpStr );
+
+        if( $signature ){
+            return true;
+        }else{
+            return false;
         }
-        $resArr = json_decode($res,1);
-        var_dump($resArr);
-//5.关闭curl
-        curl_close($ch);
     }
 
 }
