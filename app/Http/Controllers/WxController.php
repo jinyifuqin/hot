@@ -6,7 +6,8 @@ use Illuminate\Routing\Controller;
 header('content-type:text/html;charset=utf-8');
 
 define("TOKEN", "hello"); //define your token
-$wx = new WxController();
+
+$wx = new wechatCallbackapiTest();
 
 if($_GET['echostr']){
     $wx->valid(); //如果发来了echostr则进行验证
@@ -15,7 +16,7 @@ if($_GET['echostr']){
 }
 
 
-class WxController extends Controller{
+class wechatCallbackapiTest{
 
     public function valid(){ //valid signature , option
 
@@ -42,13 +43,13 @@ class WxController extends Controller{
             $keyword = trim($postObj->Content); //消息内容
             $time = time(); //时间戳
             $msgtype = 'text'; //消息类型：文本
-            $textTpl = "<xml>
-  <ToUserName><![CDATA[%s]]></ToUserName>
-  <FromUserName><![CDATA[%s]]></FromUserName>
-  <CreateTime>%s</CreateTime>
-  <MsgType><![CDATA[%s]]></MsgType>
-  <Content><![CDATA[%s]]></Content>
-  </xml>";
+            $textTpl = "<xml>  
+                        <ToUserName><![CDATA[%s]]></ToUserName>  
+                        <FromUserName><![CDATA[%s]]></FromUserName>  
+                        <CreateTime>%s</CreateTime>  
+                        <MsgType><![CDATA[%s]]></MsgType>  
+                        <Content><![CDATA[%s]]></Content>  
+                        </xml>";
 
             if($keyword == 'hehe'){
                 $contentStr = 'hello world!!!';
