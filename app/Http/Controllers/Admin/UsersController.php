@@ -90,6 +90,11 @@ class UsersController extends Controller
         }
     }
 
+    public function signout(){
+        Cache::forget('user');
+        return redirect('/admin/user');
+    }
+
     public function editshow(){
         return view('admin.editshow');
     }
@@ -136,8 +141,10 @@ class UsersController extends Controller
     public function piclist()
     {
         $memRe = Cache::get('user');
+        if(empty($memRe)){
+            return redirect('/admin/user');
+        }
         $data = DB::table('pics')->paginate(5);
-//        echo "<pre>";var_dump($data);exit;
         return view("admin.pic",['data'=>$data,'re'=>$memRe]);
     }
 

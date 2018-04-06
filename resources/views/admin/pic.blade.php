@@ -7,6 +7,10 @@
             <a>Welcome,{{$re->username}}</a>
             <img width="50" class="img-thumbnail" src="/uploads/{{$re->headpic}}"/>
         </div>
+        <div class="col-md-1 pull-right">
+            <a href="/admin/signout" class="btn-primary btn">退出登录</a>
+            {{--<img width="50" class="img-thumbnail" src="/uploads/{{$re->headpic}}"/>--}}
+        </div>
     </div>
     <div class="row">
         <div class="col-md-1 pull-right">
