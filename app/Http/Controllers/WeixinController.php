@@ -13,6 +13,10 @@ class WeixinController extends Controller
 {
     public function __construct()
     {
+
+    }
+
+    public function check(){
         if (isset($_GET['echostr'])) {
             $this->valid();
         }else{
