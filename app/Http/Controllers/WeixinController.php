@@ -12,6 +12,11 @@ define("TOKEN", "weixin");//自己定义的token 就是个通信的私钥
 //$wechatObj->valid();
 class WeixinController extends Controller
 {
+    public function __construct()
+    {
+        $this->responseMsg();
+    }
+
     public function valid()
     {
         $echoStr = $_GET["echostr"];
