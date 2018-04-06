@@ -14,7 +14,7 @@ class WeixinController extends Controller
 {
     public function __construct()
     {
-        $this->responseMsg();
+//        $this->responseMsg();
     }
 
     public function valid()
