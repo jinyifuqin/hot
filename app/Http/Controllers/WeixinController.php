@@ -11,6 +11,8 @@ class WeixinController extends Controller {
         $echostr   = $_GET['echostr'];
         $array     = array( $timestamp, $nonce, $token);
         sort($array);
+        echo "<pre>";var_dump($_GET);
+        echo "<pre>";var_dump($_REQUEST);exit;
 
         $tmpstr = implode('', $array);
         $tmpstr = sha1($tmpstr);
