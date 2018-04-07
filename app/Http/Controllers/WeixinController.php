@@ -55,7 +55,7 @@ class WeixinController extends Controller {
             }
         }
 //回复纯文本或单图文消息
-        if(($postObj->MsgType) == 'text' && trim($postObj->Content) == '夏目友人帐'){
+        if(($postObj->MsgType) == 'text' &&  preg_match('/(?=<杨)?一诺/', trim($postObj->Content))){
             $toUser   = $postObj->FromUserName;
             $fromUser = $postObj->ToUserName;
             $arr = array(
