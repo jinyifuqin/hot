@@ -4,16 +4,22 @@ use App\Http\Controllers\Controller; //add
 
 class WeixinController extends Controller {
     public function index(){
-        $timestamp = $_GET['timestamp'];//timestamp其实就是一个时间戳
-        $nonce     = $_GET['nonce'];//nonce是一个随机参数
-        $token     = "hello";//这个token填写你在微信公众平台上写的那个值
-        $signature = $_GET['signature'];//这个signature其实就是在微信公众平台已经加密好的字符串
-        $echostr   = $_GET['echostr'];
-        $array     = array( $timestamp, $nonce, $token);
-        sort($array);
+        if(!empty($_GET)){
+            $timestamp = $_GET['timestamp'];//timestamp其实就是一个时间戳
+            $nonce     = $_GET['nonce'];//nonce是一个随机参数
+            $token     = "happy";//这个token填写你在微信公众平台上写的那个值
+            $signature = $_GET['signature'];//这个signature其实就是在微信公众平台已经加密好的字符串
+            $echostr   = $_GET['echostr'];
+            $array     = array( $timestamp, $nonce, $token);
+            $tmpstr = implode('', $array);
+            $tmpstr = sha1($tmpstr);
+        }
 
-        $tmpstr = implode('', $array);
-        $tmpstr = sha1($tmpstr);
+        sort($array);
+//        echo "<pre>";var_dump($_GET);
+//        echo "<pre>";var_dump($_REQUEST);exit;
+
+
 
         if( $tmpstr == $signature && $echostr){
 
