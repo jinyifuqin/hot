@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d0790035-a62e-460f-8a6a-104115f892b6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeixinController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeixinController.php" />
     </list>
     <ignored path="hot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,22 +48,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeixinController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WeixinController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeixinController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="28" />
+            <state relative-caret-position="192">
+              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
               <folding>
-                <marker date="1523069730809" expanded="true" signature="1371:1738" placeholder="..." />
-                <marker date="1523069730809" expanded="true" signature="2434:2792" placeholder="..." />
-                <marker date="1523069730809" expanded="true" signature="2867:3213" placeholder="..." />
-                <marker date="1523069730809" expanded="true" signature="4276:4643" placeholder="..." />
+                <element signature="e#38#74#0#PHP" expanded="true" />
+                <marker date="1523070731302" expanded="true" signature="1421:1788" placeholder="..." />
+                <marker date="1523070731302" expanded="true" signature="2484:2842" placeholder="..." />
+                <marker date="1523070731302" expanded="true" signature="2917:3263" placeholder="..." />
+                <marker date="1523070731302" expanded="true" signature="4326:4693" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="laravel.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="8659" column="12" selection-start-line="8659" selection-start-column="12" selection-end-line="8659" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="41">
@@ -110,8 +121,8 @@
         <option value="$PROJECT_DIR$/app/libweibo-master/config.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HotController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WxController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WeixinController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WeixinController.php" />
       </list>
     </option>
   </component>
@@ -203,11 +214,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="storage" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="logs" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -221,7 +232,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="storage" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -317,15 +328,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\work\hot\app\weibo" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\work\hot\resources\views" />
       <recent name="F:\work\hot\app\Weibo" />
       <recent name="F:\work\hot\public\APIyyh" />
       <recent name="F:\work\hot\resources\views\emails" />
       <recent name="F:\work\hot\resources\views\admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\work\hot\app\weibo" />
     </key>
   </component>
   <component name="RunManager">
@@ -377,14 +388,7 @@
       <workItem from="1522928353378" duration="3279000" />
       <workItem from="1522976879698" duration="28331000" />
       <workItem from="1523064350295" duration="1807000" />
-      <workItem from="1523067715637" duration="1863000" />
-    </task>
-    <task id="LOCAL-00002" summary="add usercheck">
-      <created>1522893199823</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1522893199823</updated>
+      <workItem from="1523067715637" duration="2456000" />
     </task>
     <task id="LOCAL-00003" summary="add usercheckss">
       <created>1522893439410</created>
@@ -722,11 +726,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523069749526</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="weibo">
+      <created>1523070157183</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1523070157183</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52772000" />
+    <option name="totallyTimeSpent" value="53365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -778,7 +789,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../test/shapely/index.php" />
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-407">
@@ -935,6 +945,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,24 +1093,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeixinController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <marker date="1523069730809" expanded="true" signature="1371:1738" placeholder="..." />
-            <marker date="1523069730809" expanded="true" signature="2434:2792" placeholder="..." />
-            <marker date="1523069730809" expanded="true" signature="2867:3213" placeholder="..." />
-            <marker date="1523069730809" expanded="true" signature="4276:4643" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="8659" column="12" selection-start-line="8659" selection-start-column="12" selection-end-line="8659" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeixinController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <folding>
+            <element signature="e#38#74#0#PHP" expanded="true" />
+            <marker date="1523070731302" expanded="true" signature="1421:1788" placeholder="..." />
+            <marker date="1523070731302" expanded="true" signature="2484:2842" placeholder="..." />
+            <marker date="1523070731302" expanded="true" signature="2917:3263" placeholder="..." />
+            <marker date="1523070731302" expanded="true" signature="4326:4693" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,9 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller; //addaa
-
+use Log;
 class WeixinController extends Controller {
     public function index(){
+        Log::info('yangyhlog',$_REQUEST);
         $timestamp = $_GET['timestamp'];//timestamp其实就是一个时间戳
         $nonce     = $_GET['nonce'];//nonce是一个随机参数
         $token     = "weixin";//这个token填写你在微信公众平台上写的那个值
