@@ -42,7 +42,7 @@ class WeixinController extends Controller {
                 $fromUser = $postObj->ToUserName;
                 $time     = time();
                 $msgType  =  'text';
-                $content  = '欢迎关注 书旅and良玉 微信公众账号'.$postObj->FromUserName.'-'.$postObj->ToUserName;
+                $content  = '欢迎关注 锦衣 微信公众账号'.$postObj->FromUserName.'-'.$postObj->ToUserName;
                 $template = "<xml>  
                             <ToUserName><![CDATA[%s]]></ToUserName>  
                             <FromUserName><![CDATA[%s]]></FromUserName>  
@@ -60,10 +60,10 @@ class WeixinController extends Controller {
             $fromUser = $postObj->ToUserName;
             $arr = array(
                 array(
-                    'title'=>'夏目友人帐',
-                    'description'=>"此生无悔入夏目",
-                    'picUrl'=>'http://img4.duitang.com/uploads/item/201508/16/20150816015528_X8dKY.jpeg',
-                    'url'=>'http://www.shulvchen.cn',
+                    'title'=>'一诺',
+                    'description'=>"一诺的甜蜜屋",
+                    'picUrl'=>'http://jinyifuqin.vip/uploads/VrOsIjP1MEz9SH.jpg',
+                    'url'=>'http://jinyifuqin.vip/admin/user',
                 ),
             );
             $template = "<xml>  
@@ -86,20 +86,20 @@ class WeixinController extends Controller {
             echo sprintf($template, $toUser, $fromUser, time(), 'news');
         }else{
             switch( trim($postObj->Content) ){
-                case 'bb':
+                case '杨一诺':
                     $content = '我喜欢你';
                     break;
-                case '良玉':
-                    $content = '我喜欢你';
+                case '李念':
+                    $content = '我老婆';
                     break;
-                case '书旅':
-                    $content = '加油';
+                case '李家荣':
+                    $content = '小舅子';
                     break;
-                case 'dsdf':
-                    $content = '不愿错过他';
+                case '李蓉':
+                    $content = '大姐';
                     break;
-                case '垒哥':
-                    $content = '垒哥已死，有事儿烧纸';
+                case '杨寅辉':
+                    $content = '大帅哥';
                     break;
                 case '书旅and良玉':
                     $content = 'Forever with you';
