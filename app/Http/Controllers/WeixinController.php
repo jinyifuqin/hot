@@ -4,7 +4,7 @@ use App\Http\Controllers\Controller; //addaa
 use Log;
 class WeixinController extends Controller {
     public function index(){
-        Log::info('newyyh',$_REQUEST);
+//        Log::info('newyyh',$_REQUEST);
         if(!empty($_GET)){
 //            $timestamp = $_GET['timestamp'];//timestamp其实就是一个时间戳
 //            $nonce     = $_GET['nonce'];//nonce是一个随机参数
@@ -125,8 +125,8 @@ class WeixinController extends Controller {
             $msgType  = 'text';
             $write = sprintf($template1, $toUser, $fromUser,$time, $msgType, $content);
             echo sprintf($template1, $toUser, $fromUser,$time, $msgType, $content);
-            Log::info('xxx',array('content'=>$write));
-            return sprintf($template1, $toUser, $fromUser,$time, $msgType, $content);
+//            Log::info('xxx',array('content'=>$write));
+//            return sprintf($template1, $toUser, $fromUser,$time, $msgType, $content);
         }
     }
 }
