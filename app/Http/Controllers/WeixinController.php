@@ -122,6 +122,7 @@ class WeixinController extends Controller {
             $time     = time();
             //$content  = '我喜欢你';
             $msgType  = 'text';
+            Log::info('vanyyh',sprintf($template1, $toUser, $fromUser,$time, $msgType, $content));
             echo sprintf($template1, $toUser, $fromUser,$time, $msgType, $content);
         }
     }
