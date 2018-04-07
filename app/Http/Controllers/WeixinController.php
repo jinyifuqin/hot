@@ -126,7 +126,6 @@ class WeixinController extends Controller {
             Log::info('yyy',array('content'=>$write));
             echo $write;
 
-//            return sprintf($template1, $toUser, $fromUser,$time, $msgType, $content);
         }
     }
 }
