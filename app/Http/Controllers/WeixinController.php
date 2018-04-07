@@ -4,7 +4,7 @@ use App\Http\Controllers\Controller; //addaa
 use Log;
 class WeixinController extends Controller {
     public function index(){
-        Log::info('uuu',$_REQUEST);
+        Log::info('www',$_GET);
         if(!empty($_GET)){
 //            $timestamp = $_GET['timestamp'];//timestamp其实就是一个时间戳
 //            $nonce     = $_GET['nonce'];//nonce是一个随机参数
