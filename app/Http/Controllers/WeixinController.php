@@ -25,9 +25,9 @@ class WeixinController extends Controller {
 //                $this->reponseMsg();
 //            }
         }else{
-            $this->reponseMsg();
+//            $this->reponseMsg();
         }
-
+        $this->reponseMsg();
     }
     public function reponseMsg(){
 //        $postArr = $GLOBALS['HTTP_RAW_POST_DATA'];
