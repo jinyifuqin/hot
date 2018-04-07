@@ -51,6 +51,7 @@ class WeixinController extends Controller {
                             </xml>";
                 $info     = sprintf($template, $toUser, $fromUser, $time, $msgType, $content);
                 echo $info;
+                return $info;
             }
         }
 //回复纯文本或单图文消息
@@ -125,6 +126,7 @@ class WeixinController extends Controller {
             $write = sprintf($template1, $toUser, $fromUser,$time, $msgType, $content);
             Log::info('xxx',array('content'=>$write));
             echo sprintf($template1, $toUser, $fromUser,$time, $msgType, $content);
+            return sprintf($template1, $toUser, $fromUser,$time, $msgType, $content);
         }
     }
 }
