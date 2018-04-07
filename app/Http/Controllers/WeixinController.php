@@ -33,7 +33,7 @@ class WeixinController extends Controller {
 //        $postArr = $GLOBALS['HTTP_RAW_POST_DATA'];
         $postArr = file_get_contents('php://input');
         $postObj = simplexml_load_string( $postArr );
-        Log::info('uuuxx',$postArr);
+        Log::info('uuuxx',['postArr'=>$postArr]);
         if( strtolower( $postObj->MsgType) == 'event'){
             //如果是关注事件(subscribe)
             if( strtolower($postObj->Event == 'subscribe') ){
