@@ -180,54 +180,26 @@
         <section id="intro">
             <a href="#" class="logo"><img src="/uploads/{{$re->headpic}}" alt="" /></a>
             <header>
-                <h2>Future Imperfect</h2>
-                <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+                <h2>未来之星</h2>
+                <p> 人生不要等待机会 要创造机会<a href="http://html5up.net">By 大胡子叔叔</a></p>
             </header>
         </section>
 
         <!-- Mini Posts -->
         <section>
             <div class="mini-posts">
-
+                @foreach($data as $value)
                 <!-- Mini Post -->
                 <article class="mini-post">
                     <header>
-                        <h3><a href="#">Vitae sed condimentum</a></h3>
-                        <time class="published" datetime="2015-10-20">October 20, 2015</time>
+                        <h3><a href="#">{{$value->title}}</a></h3>
+                        <time class="published" datetime="2015-10-20">{{$value->updated_at}}</time>
                         <a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>
                     </header>
-                    <a href="#" class="image"><img src="/images/pic04.jpg" alt="" /></a>
+                    <a href="/admin/piccontent/{{$value->id}}" class="image"><img width="400" height="200" src="/uploads/{{$value->pathname}}" alt="" /></a>
                 </article>
+                @endforeach
 
-                <!-- Mini Post -->
-                <article class="mini-post">
-                    <header>
-                        <h3><a href="#">Rutrum neque accumsan</a></h3>
-                        <time class="published" datetime="2015-10-19">October 19, 2015</time>
-                        <a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>
-                    </header>
-                    <a href="#" class="image"><img src="/images/pic05.jpg" alt="" /></a>
-                </article>
-
-                <!-- Mini Post -->
-                <article class="mini-post">
-                    <header>
-                        <h3><a href="#">Odio congue mattis</a></h3>
-                        <time class="published" datetime="2015-10-18">October 18, 2015</time>
-                        <a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>
-                    </header>
-                    <a href="#" class="image"><img src="/images/pic06.jpg" alt="" /></a>
-                </article>
-
-                <!-- Mini Post -->
-                <article class="mini-post">
-                    <header>
-                        <h3><a href="#">Enim nisl veroeros</a></h3>
-                        <time class="published" datetime="2015-10-17">October 17, 2015</time>
-                        <a href="#" class="author"><img src="/images/avatar.jpg" alt="" /></a>
-                    </header>
-                    <a href="#" class="image"><img src="/images/pic07.jpg" alt="" /></a>
-                </article>
 
             </div>
         </section>
