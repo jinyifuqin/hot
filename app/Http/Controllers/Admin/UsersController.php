@@ -209,7 +209,8 @@ class UsersController extends Controller
         if($re){//
             $data = Pic::paginate(5);
             $data->setPath('pic');
-            return view('admin.pic',['data'=>$data,'re'=>$memRe]);
+            $homedata = DB::table('homies')->paginate(5);
+            return view('admin.pic',['data'=>$data,'re'=>$memRe,'hdata'=>$homedata]);
         }
     }
 
