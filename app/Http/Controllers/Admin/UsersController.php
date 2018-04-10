@@ -19,6 +19,7 @@ use App\Jobs\SendReminderEmail;
 use DB;
 use memcache;
 use Cache;
+use App\Homie;
 
 class UsersController extends Controller
 {
@@ -145,7 +146,8 @@ class UsersController extends Controller
             return redirect('/admin/user');
         }
         $data = DB::table('pics')->paginate(5);
-        return view("admin.pic",['data'=>$data,'re'=>$memRe]);
+        $homedata = DB::table('homies')->paginate(5);
+        return view("admin.pic",['data'=>$data,'re'=>$memRe,'hdata'=>$homedata]);
     }
 
     public function picdelete($id)
@@ -160,6 +162,54 @@ class UsersController extends Controller
     public function piccontent($id){
         $res = Pic::where('id',$id)->get();
         return view('admin/piccontent',['res'=>$res,'id'=>$id]);
+    }
+
+    public function addhomie(){
+        $memRe = Cache::get('user');
+        if(empty($memRe)){
+            return redirect('/admin/user');
+        }
+        return view('admin/addhomie',['re'=>$memRe]);
+    }
+
+    public function savehomie(Request $request){
+        $obj = new Homie();
+        $obj->title = $request->title;
+        $obj->content = $_POST['content'];
+        $username = Cache::get('user')->username;
+        $obj->author = $username;
+        $res = Homie::where('title',$obj->title)->get();
+        if(count($res))
+            return redirect('admin/pic');
+
+        $str = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        $newStr = '';
+        for($i=0;$i<14;$i++){
+            $num = mt_rand(0,strlen($str)-1);
+            $newStr .= substr($str,$num,1);
+        }
+        $newStr = $newStr.'.jpg';
+        if(filesize($_FILES['picname']['tmp_name'])/1024 > 1024){
+            list($a,$b) = getimagesize($_FILES['picname']['tmp_name']);
+            $img = imagecreatefromjpeg($_FILES['picname']['tmp_name']);
+            $des = imagecreatetruecolor($a*0.2,$b*0.2);
+            imagecopyresampled($des,$img,0,0,0,0,$a*0.2,$b*0.2,$a,$b);
+            imagejpeg($des,$_FILES['picname']['tmp_name']);
+            $result = move_uploaded_file($_FILES['picname']['tmp_name'],'uploads/'.$newStr);
+        }else{
+            if($request->file('picname'))
+                $request->file('picname')->move(public_path('uploads'),$newStr);
+        }
+
+
+        $obj->pathname = $newStr;
+        $re = $obj->save();
+        $memRe = Cache::get('user');
+        if($re){//
+            $data = Pic::paginate(5);
+            $data->setPath('pic');
+            return view('admin.pic',['data'=>$data,'re'=>$memRe]);
+        }
     }
 
     public function sendmail($id){

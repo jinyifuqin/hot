@@ -15,6 +15,7 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
 </head>
 <body>
+@yield('header')
 @yield('content')
         <!-- Scripts -->
 <script src="/assets/js/jquery.min.js"></script>
