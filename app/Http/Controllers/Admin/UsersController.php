@@ -140,13 +140,14 @@ class UsersController extends Controller
     }
 
     public function piclist()
-    {
+    {   //
         $memRe = Cache::get('user');
         if(empty($memRe)){
             return redirect('/admin/user');
         }
         $data = DB::table('pics')->paginate(5);
         $homedata = DB::table('homies')->paginate(5);
+        Log::info('homeies',$homedata);
         return view("admin.pic",['data'=>$data,'re'=>$memRe,'hdata'=>$homedata]);
     }
 
