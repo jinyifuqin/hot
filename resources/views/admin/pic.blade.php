@@ -74,6 +74,7 @@
     <div id="main">
 
         <!-- Post -->
+        @if(isset($hdata))
         @foreach($hdata as $hv)
         <article class="post">
             <header>
@@ -100,6 +101,7 @@
             </footer>
         </article>
         @endforeach
+                @endif
 
 
         <!-- Pagination -->
