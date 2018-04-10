@@ -63,7 +63,7 @@
         <!-- Actions -->
         <section>
             <ul class="actions vertical">
-                <li><a href="#" class="button big fit">Log In</a></li>
+                <li><a href="/admin/signout" class="button big fit">退出</a></li>
             </ul>
         </section>
 
