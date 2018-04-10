@@ -85,8 +85,8 @@ class UsersController extends Controller
 
         if($memRe || count($re)){
             $data = DB::table('pics')->paginate(5);
-
-            return view('/admin/pic',['data'=>$data,'re'=>$memRe]);
+            $homedata = DB::table('homies')->paginate(5);
+            return view('/admin/pic',['data'=>$data,'re'=>$memRe,'hdata'=>$homedata]);
         }else{
             return redirect('/admin/user');
         }
@@ -148,8 +148,6 @@ class UsersController extends Controller
         }
         $data = DB::table('pics')->paginate(5);
         $homedata = DB::table('homies')->paginate(5);
-        echo "<pre>";var_dump($homedata);exit;
-//        Log::info('homeies',$homedata);
         return view("admin.pic",['data'=>$data,'re'=>$memRe,'hdata'=>$homedata]);
     }
 
