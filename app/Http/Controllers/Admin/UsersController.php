@@ -20,6 +20,7 @@ use DB;
 use memcache;
 use Cache;
 use App\Homie;
+use Log;
 
 class UsersController extends Controller
 {
@@ -147,7 +148,8 @@ class UsersController extends Controller
         }
         $data = DB::table('pics')->paginate(5);
         $homedata = DB::table('homies')->paginate(5);
-        Log::info('homeies',$homedata);
+        echo "<pre>";var_dump($homedata);exit;
+//        Log::info('homeies',$homedata);
         return view("admin.pic",['data'=>$data,'re'=>$memRe,'hdata'=>$homedata]);
     }
 
