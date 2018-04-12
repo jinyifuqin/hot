@@ -25,7 +25,12 @@ use Log;
 class UsersController extends Controller
 {
     public function index(){
-
+        if (Cache::get('user')){
+            $memRe = Cache::get('user');
+            $data = DB::table('pics')->paginate(5);
+            $homedata = DB::table('homies')->paginate(5);
+            return view('/admin/pic',['data'=>$data,'re'=>$memRe,'hdata'=>$homedata]);
+        }
         return view('admin.index');
         //
     }
@@ -71,7 +76,7 @@ class UsersController extends Controller
     }
 
     public function login(Request $req,$page=1){
-//        echo "<pre>";var_dump($page);exit;
+//        echo "<pre>";var_dump($req->username,$req->psw);exit;
         if (Cache::get('user')){
 
         }else{
