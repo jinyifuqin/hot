@@ -180,8 +180,10 @@ class UsersController extends Controller
 
     public function savehomie(Request $request){
         $obj = new Homie();
+//        echo "<pre>";var_dump($_POST);exit;
         $obj->title = $request->title;
-        $obj->content = $_POST['content'];
+        $obj->content = htmlspecialchars($_POST['content']);
+//        echo "<pre>";var_dump($obj->content);exit;
         $username = Cache::get('user')->username;
         $obj->author = $username;
         $res = Homie::where('title',$obj->title)->get();

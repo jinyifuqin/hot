@@ -88,7 +88,7 @@
                 </div>
             </header>
             <a href="#" class="image featured"><img style="width: 20em;" src="/uploads/{{$hv->pathname}}" alt="" /></a>
-            <p>{{$hv->content}}</p>
+            {!!htmlspecialchars_decode($hv->content)!!}
             <footer>
                 <ul class="actions">
                     <li><a href="#" class="button big">Continue Reading</a></li>
